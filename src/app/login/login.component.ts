@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslationService } from '../translation.service';
 import { UserService } from '../user.service';
 @Component({
   selector: 'app-login',
@@ -7,7 +9,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private service: UserService, private route: Router) { }
+  constructor(private service: UserService, private route: Router, public translation:TranslationService ) { }
   res: any;
 
   ngOnInit(): void {

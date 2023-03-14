@@ -1,14 +1,15 @@
 import { Component, DoCheck } from '@angular/core';
 import { UserService } from './user.service';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements DoCheck {
-  constructor(private route: Router, private service: UserService) { }
+  constructor(private route: Router, private service: UserService) {
+
+  }
   title = 'LaserFront';
   isMenuVisible = true;
   ngDoCheck(): void {
@@ -19,4 +20,5 @@ export class AppComponent implements DoCheck {
       this.isMenuVisible = true
     }
   }
+ 
 }

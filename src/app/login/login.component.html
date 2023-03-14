@@ -1,33 +1,36 @@
-<div class="container">
+<div class="container" [dir]="translation.direction">
   <div class="row mt-5">
     <div class="col-md-8 mx-auto">
       <div class="card">
         <div class="card-header">
-          <h3>Sign in</h3>
+          <h3>{{"LOGIN" | translate}}</h3>
         </div>
         <div class="card-body">
           <form class="form" #loginform="ngForm" (submit)="ProdceedLogin(loginform)">
             <div class="form-group mt-2">
-              <label>Email</label>
-              <input type="text" class="form-control" placeholder="Email" required name="username" [className]=""
-                ngModel>
+              <label>{{"EMAIL" | translate}}</label>
+              <input type="text" class="form-control" placeholder="Email" required name="username"
+                placeholder="{{'EMAIL' | translate}}" ngModel>
             </div>
             <div class="form-group mt-2">
-              <label>Password</label>
+              <label>{{"PASSWORD" | translate}}</label>
               <input type="text" class="form-control" placeholder="Password" required type="password" name="password"
-                ngModel>
+                placeholder="{{'PASSWORD' | translate}}" ngModel>
             </div>
             <div>
               <div class="form-group mt-4">
-                <button type="submit" class="btn btn-success">Login</button>
+                <button type="submit" class="btn btn-success">{{"LOGIN" | translate}}</button>
                 <button (click)="RedirectRegister()" class="btn btn-danger"
-                  style="position: absolute; left: 100px;">Register</button>
+                  style="position: absolute; left: 100px;">{{"SIGNUP" | translate}}</button>
               </div>
-
             </div>
           </form>
-
         </div>
+
+      </div>
+      <div>
+        <button (click)="translation.changeCurrentLang('en')" class="btn bg-warning mx-2 mt-2">EN</button>
+        <button (click)="translation.changeCurrentLang('ar')" class="btn bg-warning mt-2">Ar</button>
       </div>
     </div>
   </div>

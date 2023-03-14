@@ -1,0 +1,15 @@
+{
+    "LOGIN":"Sign In",
+    "SIGNUP":"Sign Up",
+    "EMAIL":"Email",
+    "PASSWORD":"Password",
+    "PHONENUMBER":"Phone Number",
+    "PhoneNumberRec":"Phone Number is required",
+    "FormatError":"Format Error",
+    "EmailRec":"Email is required",
+    "ValideEmail":"Enter a valid email address",
+    "PasswordRec":"Password is required",
+    "PasswordFormatError":"Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number",
+    "Close":"Close"
+
+}

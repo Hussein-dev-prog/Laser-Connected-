@@ -1,61 +1,68 @@
-<div class="container">
+<div class="container"  [dir]="translation.direction">
     <div class="row mt-5">
         <div class="col-md-8 mx-auto">
             <div class="card">
                 <div class="card-header">
-                    <h3>Sign up</h3>
+                    <h3>{{"SIGNUP" | translate}}</h3>
                 </div>
                 <div class="card-body">
                     <form class="form" [formGroup]="registration" (ngSubmit)="SaveUser()">
                         <div class="form-group mt-2">
-                            <label>Phone Number</label>
-                            <input type="text" class="form-control" formControlName="phoneNumber">
+                            <label>{{"PHONENUMBER" | translate}}</label>
+                            <input type="text" class="form-control" formControlName="phoneNumber" placeholder="{{'PHONENUMBER' | translate}}">
                             <span class="text-danger"
-                                *ngIf="((registration.get('phoneNumber')?.touched) && (registration.get('phoneNumber')?.errors?.['minlength'] ) )">
-                                Phone Number is required
+                                *ngIf="((registration.get('phoneNumber')?.touched) && (registration.get('phoneNumber')?.errors?.['required'] ) )">
+                                {{"PhoneNumberRec" | translate}}
                             </span>
                             <span class="text-danger"
                                 *ngIf="((registration.get('phoneNumber')?.touched) && (registration.get('phoneNumber')?.errors?.['pattern'] ) )">
-                                Format Error
+                                {{"FormatError" | translate}}
                             </span>
                         </div>
                         <div class="form-group mt-2">
-                            <label>Email</label>
-                            <input type="text" class="form-control" formControlName="email">
+                            <label>{{"EMAIL" | translate}}</label>
+                            <input type="text" class="form-control" formControlName="email" placeholder="{{ 'EMAIL' | translate }}">
                             <span class="text-danger"
                                 *ngIf="(registration.get('email')?.touched) && registration.get('email')?.errors?.['required']">
-                                Email is required
+                                {{"EmailRec" | translate}}
                             </span>
                             <span class="text-danger"
                                 *ngIf="(registration.get('email')?.touched) && registration.get('email')?.errors?.['email']">
-                                Enter a valid email address
+                                {{"ValideEmail" | translate}}
+
                             </span>
                         </div>
                         <div class="form-group mt-2">
-                            <label>Password</label>
-                            <input type="password" class="form-control" formControlName="password">
+                            <label>{{"PASSWORD" | translate}}</label>
+                            <input type="password" class="form-control" formControlName="password"
+                                placeholder="{{ 'PASSWORD' | translate }}">
                             <span class="text-danger"
                                 *ngIf="(registration.get('password')?.touched) && registration.get('password')?.errors?.['required']">
-                                Password is required
+                                {{"PasswordRec" | translate}}
+
                             </span>
                             <span class="text-danger"
                                 *ngIf="registration.get('password')?.touched && registration.get('password')?.errors?.['pattern']">
-                                Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
-                                letter and 1 number
+                                {{"PasswordFormatError" | translate}}
+
                             </span>
                         </div>
                         <div>
                             <div class="form-group mt-4 ">
-                                <button type="submit" class="btn btn-success">Register</button>
-                                <button type="submit" class="btn btn-danger ml-4"
-                                    (click)="RedirectLogin()" style="position: absolute; left: 120px;">Close</button>
-
+                                <button type="submit" class="btn btn-success" [disabled]="isDisabled()"> {{"SIGNUP" | translate}}
+                                </button>
+                                <button type="submit" class="btn btn-danger ml-4" (click)="RedirectLogin()"
+                                    style="position: absolute; left: 120px;"> {{"Close" | translate}}
+                                </button>
                             </div>
-
                         </div>
                     </form>
                 </div>
             </div>
+            <div>
+                <button (click)="translation.changeCurrentLang('en')" class="btn bg-warning mx-2 mt-2">EN</button>
+                <button (click)="translation.changeCurrentLang('ar')" class="btn bg-warning mt-2">Ar</button>
+              </div>
         </div>
     </div>
 </div>

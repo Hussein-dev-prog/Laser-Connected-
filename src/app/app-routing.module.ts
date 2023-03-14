@@ -6,6 +6,7 @@ import { AuthGuard } from './Guard/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { Page404Component } from './page404/page404.component';
 const routes: Routes = [
+  { path: "", component: LoginComponent},
   { path: "login", component: LoginComponent},
   { path: "register", component: RegisterComponent},
   {path:"home",component:HomeComponent,canActivate:[AuthGuard]},
