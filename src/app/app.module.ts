@@ -14,6 +14,12 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader } from '@ngx-translate/core';
+import { ProgramsComponent } from './programs/programs.component';
+import { PersonalinfoComponent } from './personalinfo/personalinfo.component';
+import { FamilyinfoComponent } from './familyinfo/familyinfo.component';
+import { AcademicinfoComponent } from './academicinfo/academicinfo.component';
+import { QuestionAndAnswerComponent } from './question-and-answer/question-and-answer.component';
+import { AboutTheGrantComponent } from './about-the-grant/about-the-grant.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +27,13 @@ import { TranslateLoader } from '@ngx-translate/core';
     RegisterComponent,
     HomeComponent,
     Page404Component,
-    NavigationComponent
+    NavigationComponent,
+    ProgramsComponent,
+    PersonalinfoComponent,
+    FamilyinfoComponent,
+    AcademicinfoComponent,
+    QuestionAndAnswerComponent,
+    AboutTheGrantComponent,
   ],
   imports: [
     BrowserModule,

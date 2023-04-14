@@ -1,0 +1,10 @@
+.card-header{
+    background-color: var(--Thirdly-Color);
+    color: var(--Primary-Color);
+}
+.btn{
+    background-color: var(--Thirdly-Color);
+    color: var(--Primary-Color);
+    margin-left: 20px;
+    
+    }

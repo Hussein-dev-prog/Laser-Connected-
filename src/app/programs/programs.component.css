@@ -1,0 +1,24 @@
+.card {
+    border: 1px solid var(--Thirdly-Color);
+}
+
+.btn {
+    background-color: var(--Thirdly-Color);
+    color: var(--Primary-Color);
+}
+
+.card-body {
+    position: relative;
+}
+
+button {
+    position: absolute;
+    bottom: 20px;
+}
+
+select {
+    background-color: var(--Thirdly-Color);
+    color: var(--Primary-Color);
+    padding: 5px;
+    border-radius: 5px;
+}

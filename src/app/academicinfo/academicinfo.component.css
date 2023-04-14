@@ -1,0 +1,14 @@
+.btn{
+    background-color: var(--Thirdly-Color);
+    color: var(--Primary-Color);
+    margin-left: 20px;
+    
+    }
+    .footerbtn{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-top: 15px;
+    }

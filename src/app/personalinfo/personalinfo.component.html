@@ -1,0 +1,181 @@
+<div class="container" [dir]="translate.direction" [lang]="translate.currentLang">
+    <div class="row mt-2">
+        <div class="col-md-12 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>{{"personalInformation" | translate}}</h3>
+                </div>
+                <div class="card-body">
+                    <form class="form" [formGroup]="personalInfo">
+                        <div class="row">
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"name" | translate}}</label>
+                                <input type="text" class="form-control" placeholder="{{'arabic' | translate}}"
+                                    formControlName="name">
+                                <span class="text-danger" *ngIf="(name?.touched) && name?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                                <span class="text-danger" *ngIf="name?.errors?.['pattern']">
+                                    {{"arabicFormatError"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"familyName" | translate}}</label>
+                                <input type="text" class="form-control" placeholder="{{'arabic' | translate}}"
+                                    formControlName="familyName">
+                                <span class="text-danger"
+                                    *ngIf="(familyName?.touched) && familyName?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                                <span class="text-danger" *ngIf="familyName?.errors?.['pattern']">
+                                    {{"arabicFormatError"|translate}}
+                                </span>
+                            </div>
+
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"fatherName" | translate}}</label>
+                                <input type="text" class="form-control" placeholder="{{'arabic' | translate}}"
+                                    formControlName="fatherName">
+                                <span class="text-danger"
+                                    *ngIf="(fatherName?.touched) && fatherName?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                                <span class="text-danger" *ngIf="fatherName?.errors?.['pattern']">
+                                    {{"arabicFormatError"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"nameAndLastName" | translate}}</label>
+                                <input type="text" class="form-control" placeholder="{{'english' | translate}}"
+                                    formControlName="nameAndLastName">
+                                <span class="text-danger"
+                                    *ngIf="(nameAndLastName?.touched) && nameAndLastName?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"gender" |translate}}</label>
+                                <select class="form-select" aria-label="Gender" formControlName="gender">
+                                    <option selected>{{"gender" | translate}}</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <span class="text-danger" *ngIf="(gender?.touched) && gender?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"socialStatus" | translate}}</label>
+                                <select class="form-select" aria-label="Default select example"
+                                    formControlName="socialStatus">
+                                    <option selected>{{"socialStatus" | translate}}</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <span class="text-danger"
+                                    *ngIf="(socialStatus?.touched) && socialStatus?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"placeOfBirth" | translate}}</label>
+                                <select class="form-select" aria-label="Default select example"
+                                    formControlName="placeOfBirth">
+                                    <option selected>{{"placeOfBirth" | translate}}</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <span class="text-danger"
+                                    *ngIf="(placeOfBirth?.touched) && placeOfBirth?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"dateOfBirth" | translate}}</label>
+                                <input type="date" name="" id="" class="form-control" formControlName="dateOfBirth">
+                                <span class="text-danger"
+                                    *ngIf="(dateOfBirth?.touched) && dateOfBirth?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"localityAndRegistrationNumber" | translate}}</label>
+                                <input type="text" class="form-control"
+                                    placeholder="{{'registrationNumberEx' | translate}}"
+                                    formControlName="localityAndRegistrationNumber">
+                                <span class="text-danger"
+                                    *ngIf="(localityAndRegistrationNumber?.touched) && localityAndRegistrationNumber?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <label class="mt-2">{{"addressOfResidenceInLebanon" | translate}}</label>
+                            <div class="form-group mt-2 col-md-4">
+                                <select class="form-select" aria-label="Default select example"
+                                    formControlName="addressOfResidenceInLebanon">
+                                    <option selected>{{"governorate" | translate}}</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <span class="text-danger"
+                                    *ngIf="(addressOfResidenceInLebanon?.touched) && addressOfResidenceInLebanon?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+
+                            <div class="form-group mt-2 col-md-4">
+
+                                <input type="text" class="form-control" placeholder="{{'city' | translate}}"
+                                    formControlName="city">
+                                <span class="text-danger" *ngIf="(city?.touched) && city?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <input type="text" class="form-control" placeholder="{{'street' | translate}}"
+                                    formControlName="street">
+                                <span class="text-danger" *ngIf="(street?.touched) && street?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-4 col-md-4">
+                                <input type="text" class="form-control" placeholder="{{'building' | translate}}"
+                                    formControlName="building">
+                                <span class="text-danger" *ngIf="(building?.touched) && building?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group  col-md-4">
+                                <label>{{"nationality" | translate}}</label>
+                                <select class="form-select" aria-label="Default select example"
+                                    formControlName="nationality">
+                                    <option selected>{{"nationality" | translate}}</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <span class="text-danger"
+                                    *ngIf="(nationality?.touched) && nationality?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-8">
+                                <label>{{"additionalContactPhoneNumbers" | translate}}</label>
+                                <input type="text" class="form-control"
+                                    placeholder="{{'additionalContactPhoneNumbers' | translate}}"
+                                    formControlName="additionalContactPhoneNumbers">
+                            </div>
+                        </div>
+                        <div class="footerbtn">
+                            <!-- <button class="btn" disabled>{{"previous"|translate}}</button> -->
+                            <button class="btn" routerLink="/familyinfo"  [disabled]="isDisabled()">{{"next"|translate}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

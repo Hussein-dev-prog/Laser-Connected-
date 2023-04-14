@@ -1,0 +1,100 @@
+<div class="container" [dir]="translate.direction" [lang]="translate.currentLang">
+    <div class="row mt-2">
+        <div class="col-md-12 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>{{"academicInformation" | translate}}</h3>
+                </div>
+                <div class="card-body">
+                    <form class="form" [formGroup]="academicInfo">
+                        <div class="row">
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"degreeType" | translate}}</label>
+                                <select class="form-select" aria-label="" formControlName="degreeType">
+                                    <option selected>{{"degreeType" | translate}}</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <span class="text-danger"
+                                    *ngIf="(degreeType?.touched) && degreeType?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"degreeStatus" | translate}}</label>
+                                <select class="form-select" aria-label="" formControlName="degreeStatus">
+                                    <option selected>{{"degreeStatus" | translate}}</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <span class="text-danger"
+                                    *ngIf="(degreeStatus?.touched) && degreeStatus?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"instituteName" | translate}}</label>
+                                <input type="text" class="form-control" placeholder="" formControlName="instituteName">
+                                <span class="text-danger"
+                                    *ngIf="(instituteName?.touched) && instituteName?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"academicYear" | translate}}</label>
+                                <input type="text" class="form-control" placeholder="" formControlName="academicYear">
+                                <span class="text-danger"
+                                    *ngIf="(academicYear?.touched) && academicYear?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"grade" | translate}}</label>
+                                <input type="text" class="form-control" placeholder="" formControlName="studentsUniId">
+                                <span class="text-danger"
+                                    *ngIf="(studentsUniId?.touched) && studentsUniId?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"major" | translate}}</label>
+                                <select class="form-select" aria-label="" formControlName="major">
+                                    <option selected>{{"major" | translate}}</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <span class="text-danger" *ngIf="(major?.touched) && major?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"grade" | translate}}</label>
+                                <input type="text" class="form-control" placeholder="" formControlName="grade">
+                                <span class="text-danger" *ngIf="(grade?.touched) && grade?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"passedCreditsNb" | translate}}</label>
+                                <input type="text" class="form-control" placeholder=""
+                                    formControlName="passedCreditsNb">
+                                <span class="text-danger"
+                                    *ngIf="(passedCreditsNb?.touched) && passedCreditsNb?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="footerbtn">
+                            <button class="btn" routerLink="/personalinfo">{{"previous"|translate}}</button>
+                            <button class="btn" routerLink="/academicinfo">{{"next"|translate}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,14 +9,12 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private service: UserService, private route: Router, public translation:TranslationService ) { }
+  constructor(private service: UserService, private route: Router, public translate:TranslationService ) { }
   res: any;
 
   ngOnInit(): void {
-    localStorage.clear();
-
   }
-  ProdceedLogin(logindata: any) {
+  prodceedLogin(logindata: any) {
     if (logindata.valid) {
       this.service.ProceedLogin(logindata.value).subscribe(item => {
         this.res = item;
@@ -30,7 +28,8 @@ export class LoginComponent implements OnInit {
     }
 
   }
-  RedirectRegister() {
+  redirectRegister() {
     this.route.navigate(['/register']);
   }
+  
 }

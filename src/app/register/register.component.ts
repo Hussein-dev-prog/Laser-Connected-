@@ -12,7 +12,7 @@ import { TranslationService } from '../translation.service';
 export class RegisterComponent implements OnInit {
   isEnabled = false;
 
-  constructor(private router: Router, private service: UserService, public translation: TranslationService) { }
+  constructor(private router: Router, private service: UserService, public translate: TranslationService) { }
 
   ngOnInit(): void {
 
