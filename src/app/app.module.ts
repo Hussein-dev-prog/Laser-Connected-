@@ -20,6 +20,7 @@ import { FamilyinfoComponent } from './familyinfo/familyinfo.component';
 import { AcademicinfoComponent } from './academicinfo/academicinfo.component';
 import { QuestionAndAnswerComponent } from './question-and-answer/question-and-answer.component';
 import { AboutTheGrantComponent } from './about-the-grant/about-the-grant.component';
+
 @NgModule({
   declarations: [
     AppComponent,

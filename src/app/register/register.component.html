@@ -1,4 +1,4 @@
-<div class="container"  [dir]="translate.direction" [lang]="translate.currentLang">
+<div class="container" [dir]="translate.direction" [lang]="translate.currentLang">
     <div class="row mt-5">
         <div class="col-md-8 mx-auto">
             <div class="card">
@@ -8,26 +8,26 @@
                 <div class="card-body">
                     <form class="form" [formGroup]="registration" (ngSubmit)="SaveUser()">
                         <div class="form-group mt-2">
-                            <label>{{"phonenumber" | translate}}</label>
-                            <input type="text" class="form-control" formControlName="phoneNumber" placeholder="{{'phonenumber' | translate}}">
+                            <label>{{"phoneNumber" | translate}}</label>
+                            <input type="text" class="form-control" formControlName="phoneNumber"
+                                placeholder="{{'phoneNumber' | translate}}">
                             <span class="text-danger"
-                                *ngIf="((registration.get('phoneNumber')?.touched) && (registration.get('phoneNumber')?.errors?.['required'] ) )">
+                                *ngIf="((phoneNumber?.touched) && (phoneNumber?.errors?.['required'] ) )">
                                 {{"phoneNumberRec" | translate}}
                             </span>
                             <span class="text-danger"
-                                *ngIf="((registration.get('phoneNumber')?.touched) && (registration.get('phoneNumber')?.errors?.['pattern'] ) )">
+                                *ngIf="((phoneNumber?.touched) && (phoneNumber?.errors?.['pattern'] ) )">
                                 {{"formatError" | translate}}
                             </span>
                         </div>
                         <div class="form-group mt-2">
                             <label>{{"email" | translate}}</label>
-                            <input type="text" class="form-control" formControlName="email" placeholder="{{'email' | translate }}">
-                            <span class="text-danger"
-                                *ngIf="(registration.get('email')?.touched) && registration.get('email')?.errors?.['required']">
+                            <input type="text" class="form-control" formControlName="email"
+                                placeholder="{{'email' | translate }}">
+                            <span class="text-danger" *ngIf="(email?.touched) && email?.errors?.['required']">
                                 {{"emailRec" | translate}}
                             </span>
-                            <span class="text-danger"
-                                *ngIf="(registration.get('email')?.touched) && registration.get('email')?.errors?.['email']">
+                            <span class="text-danger" *ngIf="(email?.touched) && email?.errors?.['email']">
                                 {{"valideEmail" | translate}}
 
                             </span>
@@ -36,13 +36,11 @@
                             <label>{{"password" | translate}}</label>
                             <input type="password" class="form-control" formControlName="password"
                                 placeholder="{{ 'password' | translate }}">
-                            <span class="text-danger"
-                                *ngIf="(registration.get('password')?.touched) && registration.get('password')?.errors?.['required']">
+                            <span class="text-danger" *ngIf="(password?.touched) && password?.errors?.['required']">
                                 {{"passwordRec" | translate}}
 
                             </span>
-                            <span class="text-danger"
-                                *ngIf="registration.get('password')?.touched && registration.get('password')?.errors?.['pattern']">
+                            <span class="text-danger" *ngIf="password?.touched && password?.errors?.['pattern']">
                                 {{"passwordFormatError" | translate}}
 
                             </span>
@@ -52,7 +50,7 @@
                                 <button type="submit" class="btn " [disabled]="isDisabled()"> {{"signup" | translate}}
                                 </button>
                                 <button type="submit" class="btn ml-4" (click)="RedirectLogin()"
-                                    style="position: absolute; left: 120px;"> {{"close" | translate}}
+                                [ngClass]="translate.cssClass"> {{"close" | translate}}
                                 </button>
                             </div>
                         </div>

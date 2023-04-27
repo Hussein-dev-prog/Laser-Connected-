@@ -45,12 +45,39 @@
                                 </span>
                             </div>
                             <div class="form-group mt-2 col-md-4">
-                                <label>{{"nameAndLastName" | translate}}</label>
+                                <label>{{"name" | translate}}</label>
                                 <input type="text" class="form-control" placeholder="{{'english' | translate}}"
-                                    formControlName="nameAndLastName">
+                                    formControlName="nameEnglish">
                                 <span class="text-danger"
-                                    *ngIf="(nameAndLastName?.touched) && nameAndLastName?.errors?.['required']">
+                                    *ngIf="(nameEnglish?.touched) && nameEnglish?.errors?.['required']">
                                     {{"required"|translate}}
+                                </span>
+                                <span class="text-danger" *ngIf="nameEnglish?.errors?.['pattern']">
+                                    {{"englishFormatError"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"familyName" | translate}}</label>
+                                <input type="text" class="form-control" placeholder="{{'english' | translate}}"
+                                    formControlName="familyNameEnglish">
+                                <span class="text-danger"
+                                    *ngIf="(familyNameEnglish?.touched) && familyNameEnglish?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                                <span class="text-danger" *ngIf="familyNameEnglish?.errors?.['pattern']">
+                                    {{"englishFormatError"|translate}}
+                                </span>
+                            </div>
+                            <div class="form-group mt-2 col-md-4">
+                                <label>{{"fatherName" | translate}}</label>
+                                <input type="text" class="form-control" placeholder="{{'english' | translate}}"
+                                    formControlName="fatherNameEnglish">
+                                <span class="text-danger"
+                                    *ngIf="(fatherNameEnglish?.touched) && fatherNameEnglish?.errors?.['required']">
+                                    {{"required"|translate}}
+                                </span>
+                                <span class="text-danger" *ngIf="fatherNameEnglish?.errors?.['pattern']">
+                                    {{"englishFormatError"|translate}}
                                 </span>
                             </div>
                             <div class="form-group mt-2 col-md-4">
@@ -171,7 +198,8 @@
                         </div>
                         <div class="footerbtn">
                             <!-- <button class="btn" disabled>{{"previous"|translate}}</button> -->
-                            <button class="btn" routerLink="/familyinfo"  [disabled]="isDisabled()">{{"next"|translate}}</button>
+                            <button class="btn" routerLink="/familyinfo"
+                                [disabled]="isDisabled()">{{"next"|translate}}</button>
                         </div>
                     </form>
                 </div>

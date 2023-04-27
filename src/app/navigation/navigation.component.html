@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light"  [ngClass]="translate.isEnglishStyle ? 'english' :'' " [dir]="translate.direction" [lang]="translate.currentLang">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" [dir]="translate.direction" [lang]="translate.currentLang">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="../../assets/images/LASeR-logo.png" alt="" srcset="" width="100"
         height="50"></a>
@@ -8,42 +8,41 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav my-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
+        <li class="nav-item" [ngClass]="translate.cssClass">
           <i class="bi bi-mortarboard-fill"></i> <a class="nav-link active" aria-current="page"
             routerLink="/programs">{{"grantProgrammes"|translate}}</a>
         </li>
-        <li class="nav-item" *ngIf="user.IsLoogedIn()">
+        <li class="nav-item" [ngClass]="translate.cssClass" *ngIf="user.IsLoogedIn()">
           <i class="bi bi-person-circle"></i>
           <a class="nav-link" routerLink="/personalinfo">{{"profile"|translate}}</a>
         </li>
-        <li class="nav-item"  *ngIf="user.IsLoogedIn()">
+        <li class="nav-item" [ngClass]="translate.cssClass" *ngIf="user.IsLoogedIn()">
           <i class="bi bi-book-fill"></i>
           <a class="nav-link" href="">{{"courseRegistration"|translate}}</a>
         </li>
-        <li class="nav-item"  *ngIf="user.IsLoogedIn()">
+        <li class="nav-item" [ngClass]="translate.cssClass" *ngIf="user.IsLoogedIn()">
           <i class="bi bi-currency-dollar"></i>
           <a class="nav-link" href="">{{"financialAffairs"|translate}}</a>
         </li>
-        <li class="nav-item">
-          <i class="bi bi-question-circle-fill" ></i>
+        <li class="nav-item" [ngClass]="translate.cssClass">
+          <i class="bi bi-question-circle-fill"></i>
           <a class="nav-link" routerLink="/QuestionAndAnswer">{{"questionAndAnswer"|translate}}</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" [ngClass]="translate.cssClass">
           <i class="bi bi-info-circle-fill"></i>
           <a class="nav-link" routerLink="AboutTheGrant">{{"aboutTheGrant"|translate}}</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" [ngClass]="translate.cssClass">
           <a class="nav-link" target="_blank" href="https://laser-lb.org/">{{"laserSocietyWebsite"|translate}}</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" [ngClass]="translate.cssClass">
           <select class="form-select" aria-label="" (change)="onChangeLang($event)">
             <option selected value="ar">AR</option>
             <option value="en">EN</option>
           </select>
         </li>
       </ul>
-      <!-- </div> -->
-      <form class="d-flex"  *ngIf="user.IsLoogedIn()">
+      <form class="d-flex" *ngIf="user.IsLoogedIn()">
         <button class="btn btn-outline-primary" type="submit" (click)="user.logout()">{{"Logout"|translate}}</button>
       </form>
     </div>

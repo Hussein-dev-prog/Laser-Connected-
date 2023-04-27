@@ -1,10 +1,17 @@
-.card-header{
+.card-header {
     background-color: var(--Thirdly-Color);
     color: var(--Primary-Color);
 }
-.btn{
+
+.btn {
     background-color: var(--Thirdly-Color);
     color: var(--Primary-Color);
-    margin-left: 20px;
-    
-    }
+}
+
+.arabic {
+    margin-right: 10px;
+}
+
+.english {
+    margin-left: 10px;
+}

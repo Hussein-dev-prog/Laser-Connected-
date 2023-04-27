@@ -7,14 +7,16 @@ import { TranslationService } from '../translation.service';
   styleUrls: ['./familyinfo.component.css']
 })
 export class FamilyinfoComponent implements OnInit {
-  isEnabled = false;
+  isEnabled = false;// Flag to indicate whether form is enabled or disabled
+
 
   constructor(public translate: TranslationService) { }
 
   ngOnInit(): void {
 
   }
-  familyInfo = new FormGroup({
+    // Defining the FormGroup that will contain our form controls
+familyInfo = new FormGroup({
     familyMembers: new FormControl('', Validators.compose([Validators.required])),
     fatherJobType: new FormControl('', Validators.compose([Validators.required])),
     fatherSalary: new FormControl('', Validators.compose([Validators.required])),
@@ -24,9 +26,10 @@ export class FamilyinfoComponent implements OnInit {
     applicantChildrenNo: new FormControl('', Validators.compose([Validators.required])),
     applicantJobType: new FormControl('', Validators.compose([Validators.required])),
     applicantSalary: new FormControl('', Validators.compose([Validators.required])),
-    notes: new FormControl('', Validators.compose([Validators.required]))
+    notes: new FormControl(' ', Validators.compose([Validators.required]))
   })
-  get familyMembers() {
+    // Creating getters for each form control so that they can be accessed in the template
+get familyMembers() {
     return this.familyInfo.get('familyMembers');
   }
   get fatherJobType() {
@@ -56,6 +59,7 @@ export class FamilyinfoComponent implements OnInit {
   get notes() {
     return this.familyInfo.get('notes');
   }
+   //this function check if the form is valid, it will change the status of the button next to enabled or disabled.
   isDisabled() {
     if (!this.familyInfo.valid) {
             return !this.isEnabled;

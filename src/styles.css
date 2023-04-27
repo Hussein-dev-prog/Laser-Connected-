@@ -5,8 +5,6 @@
     --Secondary-Color:#54595F;
     --Thirdly-Color: #f7931d;
     --body-background:#f4f4f4;
-    --arabic:right;
-    --english:left;
   }
   body{
     background-color: var(--body-background);

@@ -5,20 +5,64 @@
 .btn {
     background-color: var(--Thirdly-Color);
     color: var(--Primary-Color);
+    border-color: transparent !important;
 }
 
-.card-body {
+.programs {
     position: relative;
 }
 
-button {
+.programs>button {
     position: absolute;
     bottom: 20px;
 }
 
-select {
+.programs>select {
     background-color: var(--Thirdly-Color);
     color: var(--Primary-Color);
     padding: 5px;
     border-radius: 5px;
 }
+
+.filter>select {
+    width: 100%;
+    border: 1px solid var(--Thirdly-Color);
+    border-radius: 5px;
+    padding: 5px;
+
+
+}
+
+.form-control:focus {
+    border-color: none !important;
+    outline: none;
+}
+
+.form-control:focus,
+select:focus {
+    box-shadow: none;
+    border-color: var(--Thirdly-Color);
+}
+
+
+.btn:focus {
+    border-color: transparent;
+    background-color: var(--Secondary-Color);
+    color: var(--Primary-Color);
+}
+
+.btn-close {
+    box-shadow: none;
+    color: var(--Thirdly-Color);
+}
+@media screen and (max-width: 992px) {
+    .col-md-4{
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+      }
+      .filtration>.filter{
+        margin-top: 10px;
+      }
+  }
+  

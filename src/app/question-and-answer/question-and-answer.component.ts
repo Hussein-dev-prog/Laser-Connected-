@@ -142,9 +142,10 @@ export class QuestionAndAnswerComponent {
     },
     
   ]
-  isTitleValueArray() {
-    return Array.isArray(this.questions[0].title[1].value);
+  isTitleValueArray(title: any): boolean {
+    return Array.isArray(title.value);
   }
+  
 
   constructor(public translate: TranslationService) { }
 

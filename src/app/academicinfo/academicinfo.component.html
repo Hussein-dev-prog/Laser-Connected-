@@ -90,7 +90,7 @@
                         </div>
                         <div class="footerbtn">
                             <button class="btn" routerLink="/personalinfo">{{"previous"|translate}}</button>
-                            <button class="btn" routerLink="/academicinfo">{{"next"|translate}}</button>
+                            <button class="btn"   [disabled]="isDisabled()" routerLink="/academicinfo">{{"next"|translate}}</button>
                         </div>
                     </form>
                 </div>

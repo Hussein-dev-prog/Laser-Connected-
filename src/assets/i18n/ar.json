@@ -7,7 +7,7 @@
     "phoneNumberRec": "رقم الهاتف مطلوب",
     "formatError": "خطأ في التنسيق",
     "emailRec": "البريد الالكتروني مطلوب",
-    "valideEmail": "البريد الالكتروني مطلوب",
+    "valideEmail": "أدخل عنوان بريد إلكتروني صالح",
     "passwordRec": "كلمة المرور مطلوبة",
     "passwordFormatError": "يجب أن تحتوي كلمة المرور على 8 أحرف كحد أدنى ، وحرف واحد كبير على الأقل ، وحرف صغير واحد ، ورقم واحد",
     "close": "إغلاق",
@@ -78,5 +78,8 @@
     "major":"الإختصاص",
     "grade":"العلامة",
     "passedCreditsNb":"عدد الأرصدة المجتازة",
-    "academicInformation": "معلومات أكاديمية"
+    "academicInformation": "معلومات أكاديمية",
+    "theUiversityYouWantToAttend": "الجامعة التي تريد الإلتحاق بها",
+    "requiredDegree":"الشهادة المطلوبة",
+    "studentNationality":"جنسية الطالب"
 }
